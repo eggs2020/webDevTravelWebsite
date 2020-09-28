@@ -1,0 +1,157 @@
+/*Edwin GonoSantosa
+  July 16, 2020
+  CPRG 210, Web Dev- HTML/CSS*/
+
+/*Reset all styling, including default*/
+body, html, div, blockquote, img, label, p, h1, h2, h3, h4, h5, h6, pre, ul, ol,
+li, dl, dt, dd, form, a, fieldset, input, th, td
+{
+   margin: 0;
+   padding: 0; 
+   border: 0; 
+   outline: none;
+}
+
+/*Style for header section*/
+.header {
+  margin: 0;
+  padding: 20px 5px 20px 5px;
+  font-family: Audiowide, Helvetica, sans-serif;
+  text-align: center;
+  background-image: url('https://storage.needpix.com/rsynced_images/skyline-calgary-866032_1280.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.header h1{
+  color: whitesmoke;
+  margin: 0;
+  padding: 0.4em;
+  font-size: 5vw;
+  
+}
+
+.header p{
+  color:white;
+  margin: 0;
+  font-size: 2vw;
+}
+
+/*Style for top navigation bar*/
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: RGBA(230, 230, 230,1);
+
+}
+
+nav li {
+  float: left;
+}
+
+nav li a {
+  display: block;
+  color: brown;
+  text-align: center;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-family: Helvetica, sans-serif;
+  font-weight: bold;
+}
+
+nav li a:hover:not(.active) {
+  background-color: white;
+}
+
+.active {
+  background-color: RGBA(191, 191, 191,1)
+}
+
+/*Sytle for <body> tag*/
+body{
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: none;
+  font-family: Helvetica, sans-serif;
+  background-color: RGBA(179, 217, 255, 0.9);
+}
+
+/*Sytle for <footers> tag*/
+footer{
+  padding: 5px 0 5px 0;
+  color: gray;
+  font-family: Helvetica, sans-serif;
+}
+
+footer img{
+  margin: 0 10px 0 5px;
+  vertical-align: middle;
+}
+
+footer a:link {
+  text-decoration: none;
+}
+
+footer a:visited {
+  text-decoration: none;
+}
+
+.center{
+  text-align: center;
+}
+
+/*Sytle for heading for each group of picture*/
+.heading{
+  margin: 0;
+  padding: 5px;
+  background-color: RGBA(230, 230, 230,1);
+  color: brown;
+  text-align: center;
+}
+
+/*Style for the picture in two columns using flexbox*/
+* {
+  box-sizing: border-box;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 0 20px 0;
+}
+
+.column {
+  flex: 50%;
+  max-width: 50%;
+  padding: 0 5px;
+}
+
+.column img {
+  margin-top: 5px;
+  vertical-align: middle;
+}
+
+/* Responsive layout for the flexbox - change to one column-layout from two columns */
+@media (max-width: 800px) {
+  .column {
+    flex: 100%;
+    max-width: 100%;
+  }
+}
+
+table {
+  table-layout: fixed;
+  width: 100%;
+  color: brown;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+th, td{
+  padding: 5px;
+  text-align: center;
+  /*border: 1px solid black;*/
+}

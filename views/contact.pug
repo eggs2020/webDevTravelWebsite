@@ -1,0 +1,66 @@
+extends layout
+
+block content
+  .header
+    h1.font-weight-bold CompanyXYZ Agency
+    p(style='visibility: hidden;')  Welcome to Travel Experts
+  // Navigation Bar
+  nav
+    ul
+      li
+        a(href='/index') Home
+      li
+        a.active(href='/contact') Contact Us
+      li
+        a(href='/register') Register
+  br
+  .container
+    h2.font-weight-bold Contact Us
+    br
+    .row
+      .col-sm-6
+        // Address of Company
+        .heading.font-weight-bold
+          h4 Our Address
+        p.center 16 Royal Vista Link NW
+        p.center Calgary AB T3R 0N2
+        br
+        // Emergency Phone Numbers
+        .heading.font-weight-bold
+          h4 Emergency Assistance
+        p.center  1-888-980-5555 (within Canada)
+        p.center  1-403-111-2222 (Outside Canada, call collect)
+        br
+        // Agents Phone Numbers
+        .heading.font-weight-bold
+          h4  Our Agents 
+        h5.center Jaime Doe
+        p.center 403-222-3333
+        p.center jdoe@email.com
+        br
+        h5.center Jane Audrey
+        p.center 403-333-4444
+        p.center jaudrey@email.com
+        br
+        br
+      .col-sm-6
+        form#contacUsForm(action='/contactdata' method='post')
+          .form-group
+            label(for='nameContact') Name:
+            input#nameContact.form-control.text-body(type='text' name='nameContact' placeholder='John Doe')
+          .form-group
+            label(for='emailContact') Email:
+            input#emailContact.form-control.text-body(type='email' name='emailContact' placeholder='jdoe@gmail.com')
+          .form-group
+            label(for='phoneContact') Email:
+            input#emailContact.form-control.text-body(type='text' name='phoneContact' placeholder='403-811-6400')
+          .form-group
+            label(for='commentContact') Comment:
+            textarea#commentContact.form-control(rows='8' name='commentContact')
+          // This button does not do anything for now
+          button.btn.btn-primary(type='submit') Submit
+  // Footer of Page
+  footer.center
+    br
+    p.center  Copyright &copy; 2020 CompanyXYZ
+    footer  

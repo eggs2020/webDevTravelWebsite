@@ -1,0 +1,66 @@
+extends layout
+
+block content
+  .header
+    h1.font-weight-bold CompanyXYZ Agency
+    p(style='visibility: hidden;')  Welcome to Travel Experts
+  // Navigation bar
+  nav
+    ul
+      li
+        a(href='/index') Home
+      li
+        a(href='/contact') Contact Us
+      li
+        a.active(href='/register') Register
+  br
+  // Form using bootstrap 4
+  .container
+    h2.font-weight-bold Registration Form
+    br
+    form#regForm.was-validated(action='/registerdata' method='POST' onsubmit='return validatePostalCode()')
+      .form-group
+        label.font-weight-bold(for='fname') First Name:
+        span.text-primary(style='display: none;') Enter your first name
+        input#fname.form-control.text-body(type='text' name='fname' onfocus="showHideMessage(this, 'inline')" onblur="showHideMessage(this, 'none')" required='' onkeyup='enableButton()')
+      .form-group
+        label.font-weight-bold(for='lname') Last Name:
+        span.text-primary(style='display: none;') Enter your Last name
+        input#lname.form-control.text-body(type='text' name='lname' onfocus="showHideMessage(this, 'inline')" onblur="showHideMessage(this, 'none')" required='' onkeyup='enableButton()')
+      .form-group
+        label.font-weight-bold(for='address1') Address:
+        span.text-primary(style='display: none;') Enter your address
+        input#address1.form-control.text-body(type='text' name='address1' placeholder='734 7th Ave SW, Suite 234' onfocus="showHideMessage(this, 'inline')" onblur="showHideMessage(this, 'none')" required='' onkeyup='enableButton()')
+      .form-group
+        label.font-weight-bold(for='city') City:
+        span.text-primary(style='display: none;') Enter city of residence
+        input#city.form-control.text-body(type='text' name='city' placeholder='Calgary' onfocus="showHideMessage(this, 'inline')" onblur="showHideMessage(this, 'none')" required='' onkeyup='enableButton()')
+      .form-group
+        label.font-weight-bold(for='prov') Province:
+        select#prov.form-control(name='prov' required='')
+          option(value='AB') AB
+          option(value='NU') NU
+          option(value='YT') YT
+          option(value='NT') NT
+          option(valur='BC') BC
+          option(value='SK') SK
+          option(value='MB') MB
+          option(value='ON') ON
+          option(value='QC') QC
+          option(value='NB') NB
+          option(value='NS') NS
+          option(value='PE') PE
+          option(value='NL') NL
+      .form-group
+        label.font-weight-bold(for='postCode') Postal Code:
+        span.text-primary(style='display: none;') Enter your postal code in H0H 0H0 format
+        input#postCode.form-control.text-body(type='text' name='postCode' placeholder='H0H 0H0' onfocus="showHideMessage(this, 'inline')" onblur="showHideMessage(this, 'none')" required='' onkeyup='enableButton()')
+      // Buttons to Submit and Reset
+      .center
+        button#submitButton.btn.btn-primary(onclick='submitForm()' disabled='') Submit
+        button.btn.btn-primary(onclick='resetForm()') Reset
+  // Footer of Page
+  footer.center
+    br
+    p.center  Copyright &copy; 2020 CompanyXYZ
+

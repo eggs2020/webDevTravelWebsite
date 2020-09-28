@@ -1,0 +1,62 @@
+extends layout
+
+block content
+  // Script for displaying 4 images and their descriptions
+  // showImages() is a function in an external javascript file
+  script.
+    $( document ).ready(function() {
+      showImages()
+    })
+  .header
+    h1 CompanyXYZ Agency
+    p  Welcome to Travel Experts
+  // Navigation Bar
+  nav
+    ul
+      li
+        a.active(href='/index') Home
+      li
+        a(href='/contact') Contact Us
+      li
+        a(href='/register') Register
+  br
+  // Section for displaying random greeting
+  // randomGreeting variable comes from index.js file
+  .heading
+    h2= randomGreeting
+  br
+  // Section for loading 4 images/description
+  .heading
+    h2 Services We Offered
+  br
+  .row
+    table#table1
+      tr#tableRow1
+      tr#tableRow2
+      tr#tableRow3
+      tr#tableRow4
+  // Section for Africa Photo Grid
+  .heading
+    h2 Africa
+  .row
+    .column
+      img(src='images/egyptPyramid.jpg' style='width:100%')
+    .column
+      img(src='images/tanzaniaSerengeti.jpg' style='width:100%')
+  // section for Europe Photo Grid
+  .heading
+    h2 Europe
+  .row
+    .column
+      img(src='/images/parisLouvre.jpg' style='width:100%')
+    .column
+      img(src='/images/romeColosseum.jpg' style='width:100%')
+  // Footer section of webpage
+  footer
+    a(href='/contact' target='_self')
+      img(src='/images/contactUsRectangle2.png' alt='Contact Us' style='width:100px;')
+    a(href='/register' target='_self')
+      img(src='/images/signUpSquare2.png' alt='Register' style='width:70px;')
+    br
+    br
+    p.center Copyright &copy; 2020 CompanyXYZ
